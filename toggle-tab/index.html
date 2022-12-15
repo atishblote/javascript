@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Tab</title>
+
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .tab_btn {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tabs {
+            text-align: center;
+            width: -webkit-fill-available;
+            padding: 10px;
+            background-color: rgb(47, 220, 236);
+            text-decoration: none;
+        }
+        .tab_panel{
+            display: none;
+            padding: 20px;
+        }
+        .is-active {
+            display: block;
+            background-color: aliceblue;
+        }
+        h1{
+            margin-top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+    <div class="container" style="max-width: 60%; margin: 0 auto;">
+
+
+        <ul class="tab_btn">
+            <li class="tabs is-active" data-target="#home">Home</li>
+            <li class="tabs" data-target="#profile">Profile</li>
+            <li class="tabs" data-target="#about">About</li>
+        </ul>
+
+        <div class="tab_container">
+            <div class="tab_panel is-active" id="home">
+                <h1>Home</h1>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, beatae.
+            </div>
+
+            <div class="tab_panel" id="profile">
+                <h1>Profile</h1>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, beatae.
+            </div>
+
+            <div class="tab_panel" id="about">
+                <h1>About</h1>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, beatae.
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+
+        
+        window.onload = ((event) => {
+
+            //get tab
+            const tab = document.querySelectorAll('.tabs');
+
+            //get tab content
+            const tabContent = document.querySelectorAll('.tab_panel');
+
+            tab.forEach((tabclick) => {
+                console.log(tabclick);
+
+                tabclick.addEventListener("click" , () => {
+                    const target = document.querySelector(tabclick.dataset.target);
+                    console.log(target);
+
+                    tabContent.forEach((tc) => {
+                        tc.classList.remove("is-active");
+                    })
+
+                    target.classList.add("is-active");
+
+                    tab.forEach((tabrem) => {
+                        tabrem.classList.remove("is-active");
+                    })
+
+                    tabclick.classList.add("is-active");
+                })
+            })
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // window.onload = (event) => {
+        //     const getTab = document.querySelectorAll('.tabs');
+        //     console.log(getTab);
+
+        //     const tabContent = document.querySelectorAll('.tab_panel');
+        //     console.log(tabContent);
+
+            
+
+        //     getTab.forEach((cktab) => {
+        //         cktab.addEventListener("click" , () => {
+        //             const target = document.querySelector(cktab.dataset.target);
+        //             console.log(target);
+        //             ta
+
+        //             tabContent.forEach((tc) => {
+        //                 tc.classList.remove("is-active");
+        //             })
+
+        //             target.classList.add("is-active");
+
+        //             getTab.forEach((tt) => {
+        //                 tt.classList.remove("is-active");
+        //             })
+
+        //             cktab.classList.add("is-active");
+
+        //         })
+        //     })
+
+
+        // } 
+    </script>
+
+
+
+
+</body>
+
+</html>
